@@ -40,7 +40,8 @@ import {
       transition('void => *', [
         style({
           transform: 'translateX(-100%)',
-          opacity:1
+          opacity:1,
+          background:'teal'
         }),
         animate(500)
       ]),
