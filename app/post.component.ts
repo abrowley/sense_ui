@@ -39,7 +39,7 @@ import {
         )),
       transition('void => *', [
         style({
-          transform: 'translateX(-100%)',
+          transform: 'translateX(-1%)',
           opacity:1,
           background:'teal'
         }),
@@ -47,8 +47,9 @@ import {
       ]),
       transition('* => void', [
         animate(500, style({
-          transform: 'translateX(100%)',
-          opacity:0
+          transform: 'translateX(1%)',
+          opacity:0,
+          background:'paleturquoise'
         }))
       ])
     ])
