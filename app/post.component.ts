@@ -13,12 +13,13 @@ import {
   selector: 'post_component',
   template: `
         <div class="posts">
+            <h2>Updates</h2>
             <li 
               [@flyInOut]="'in'" 
               class="borderlist" 
               *ngFor="let pst of post_messages.slice().reverse().slice(0,10)"
               >
-                <b>Message:</b>{{pst.message}} <b>Sender:</b>{{pst.sender}} \ <b>Received:</b>{{pst.time_recv}}
+                <b>Message:</b>{{pst.message}} <b>Sender:</b>{{pst.sender}} <b>Received:</b>{{pst.time_recv}}
               </li>
         </div>
     `,
@@ -26,19 +27,28 @@ import {
     .borderlist {
       list-style-position:inside;
       list-style-type: none;
-      border: 1px solid black;
+      background-color: aliceblue;
     }`
   ],
   providers: [PostService],
   animations: [
     trigger('flyInOut', [
-      state('in', style({transform: 'translateX(0)'})),
+      state('in', style(
+        {transform: 'translateX(0)'
+        }
+        )),
       transition('void => *', [
-        style({transform: 'translateX(-100%)'}),
+        style({
+          transform: 'translateX(-100%)',
+          opacity:1
+        }),
         animate(500)
       ]),
       transition('* => void', [
-        animate(500, style({transform: 'translateX(100%)'}))
+        animate(500, style({
+          transform: 'translateX(100%)',
+          opacity:0
+        }))
       ])
     ])
   ]
