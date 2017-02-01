@@ -13,11 +13,11 @@ import {
   selector: 'post_component',
   template: `
         <div class="posts">
-            <h2>Updates</h2>
+            <h3>Updates</h3>
             <li 
               [@flyInOut]="'in'" 
               class="borderlist" 
-              *ngFor="let pst of post_messages.slice().reverse().slice(0,10)"
+              *ngFor="let pst of post_messages.slice().reverse().slice(0,5)"
               >
                 <b>Message:</b>{{pst.message}} <b>Sender:</b>{{pst.sender}} <b>Received:</b>{{pst.time_recv}}
               </li>
