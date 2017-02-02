@@ -3,7 +3,8 @@ import {Subject} from 'rxjs/Rx';
 import {WebSocketService} from './websocket.service';
 
 // TODO : Dynamically generate the websocket URL
-const POST_URL = 'ws://192.168.1.80:6600/websocket';
+//const POST_URL = 'ws://192.168.1.80:6600/websocket';
+const POST_URL = 'ws://raspberrypi3:6600/websocket';
 
 export interface PostMessage {
   sender: string;
